@@ -22471,11 +22471,11 @@ var Greeter = function (_React$Component) {
             return _react2.default.createElement(
                 'h2',
                 null,
-                'React is setup and running !',
+                'React is running !',
                 _react2.default.createElement(
                     'span',
                     { className: 'greet-text' },
-                    '\u4F60\u597D \uFF01'
+                    ' \u4F60\u597D \uFF01'
                 )
             );
         }
@@ -22526,7 +22526,7 @@ exports = module.exports = __webpack_require__(187)(true);
 
 
 // module
-exports.push([module.i, "body{\r\n    background-color: bisque;\r\n}\r\n\r\n\r\n.greet-text {\r\n    color: red;\r\n}", "", {"version":3,"sources":["D:/TUTOR/webpack sample project/app/Greeter.css"],"names":[],"mappings":"AAAA;IACI,yBAAyB;CAC5B;;;AAGD;IACI,WAAW;CACd","file":"Greeter.css","sourcesContent":["body{\r\n    background-color: bisque;\r\n}\r\n\r\n\r\n.greet-text {\r\n    color: red;\r\n}"],"sourceRoot":""}]);
+exports.push([module.i, "body{\r\n    background-color: bisque;\r\n}\r\n\r\n\r\n.greet-text {\r\n    color: red;\r\n}", "", {"version":3,"sources":["D:/java projects/webpack-sample-project/app/Greeter.css"],"names":[],"mappings":"AAAA;IACI,yBAAyB;CAC5B;;;AAGD;IACI,WAAW;CACd","file":"Greeter.css","sourcesContent":["body{\r\n    background-color: bisque;\r\n}\r\n\r\n\r\n.greet-text {\r\n    color: red;\r\n}"],"sourceRoot":""}]);
 
 // exports
 
