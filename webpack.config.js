@@ -1,4 +1,5 @@
 var htmlWebpackPlugin = require('html-webpack-plugin');
+var path = require('path'); // nodejs 自带的path工具，不需要npm install
 
 module.exports = {
     entry: {
@@ -11,16 +12,30 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
+                test: /\.css$/,     // 以css结尾的文件
                 use: [
                     {loader: "style-loader"},
-                    {loader: "css-loader", options: {sourceMap: true}}
+                    {loader: "css-loader", options: {sourceMap: true}},
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            sourceMap: true,
+                            plugins: function () {
+                                return [
+                                    require('autoprefixer')({
+                                        browsers: ['last 5 versions']
+                                    })
+                                ];
+                            }
+                        }
+                    }
                 ]
             },
             {
                 test: /\.(js|jsx)$/,
                 loader: "babel-loader",
                 exclude: /node_modules/,
+                include: path.resolve(__dirname, 'app'),
                 options: {
                     presets: ["react", "env"]
                 }

@@ -22471,11 +22471,11 @@ var Greeter = function (_React$Component) {
             return _react2.default.createElement(
                 'h2',
                 null,
-                'React is setup and running !',
+                'React is running !',
                 _react2.default.createElement(
                     'span',
                     { className: 'greet-text' },
-                    '\u4F60\u597D \uFF01'
+                    ' \u4F60\u597D \uFF01'
                 )
             );
         }
@@ -22507,8 +22507,8 @@ if(content.locals) module.exports = content.locals;
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../node_modules/css-loader/index.js??ref--0-1!./Greeter.css", function() {
-			var newContent = require("!!../node_modules/css-loader/index.js??ref--0-1!./Greeter.css");
+		module.hot.accept("!!../node_modules/css-loader/index.js??ref--0-1!../node_modules/postcss-loader/lib/index.js??ref--0-2!./Greeter.css", function() {
+			var newContent = require("!!../node_modules/css-loader/index.js??ref--0-1!../node_modules/postcss-loader/lib/index.js??ref--0-2!./Greeter.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -22526,7 +22526,7 @@ exports = module.exports = __webpack_require__(187)(true);
 
 
 // module
-exports.push([module.i, "body{\r\n    background-color: bisque;\r\n}\r\n\r\n\r\n.greet-text {\r\n    color: red;\r\n}", "", {"version":3,"sources":["D:/TUTOR/webpack sample project/app/Greeter.css"],"names":[],"mappings":"AAAA;IACI,yBAAyB;CAC5B;;;AAGD;IACI,WAAW;CACd","file":"Greeter.css","sourcesContent":["body{\r\n    background-color: bisque;\r\n}\r\n\r\n\r\n.greet-text {\r\n    color: red;\r\n}"],"sourceRoot":""}]);
+exports.push([module.i, "body {\r\n    background-color: bisque;\r\n}\r\n\r\n.greet-text {\r\n    color: red;\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: -ms-flexbox;\r\n    display: flex; /* 会受到 postcss-loader 的 autoprefixery影响 */\r\n    padding: 0;\r\n    margin: 0;\r\n    list-style: none;\r\n}", "", {"version":3,"sources":["D:/TUTOR/webpack sample project/app/D:/TUTOR/webpack sample project/Greeter.css"],"names":[],"mappings":"AAAA;IACI,yBAAyB;CAC5B;;AAED;IACI,WAAW;IACX,qBAAc;IAAd,sBAAc;IAAd,qBAAc;IAAd,cAAc,CAAC,0CAA0C;IACzD,WAAW;IACX,UAAU;IACV,iBAAiB;CACpB","file":"Greeter.css","sourcesContent":["body {\r\n    background-color: bisque;\r\n}\r\n\r\n.greet-text {\r\n    color: red;\r\n    display: flex; /* 会受到 postcss-loader 的 autoprefixery影响 */\r\n    padding: 0;\r\n    margin: 0;\r\n    list-style: none;\r\n}"],"sourceRoot":""}]);
 
 // exports
 
