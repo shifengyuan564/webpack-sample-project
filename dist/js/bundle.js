@@ -22501,14 +22501,14 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(188)(content, options);
+var update = __webpack_require__(189)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
 	// When the styles change, update the <style> tags
 	if(!content.locals) {
-		module.hot.accept("!!../node_modules/css-loader/index.js??ref--0-1!../node_modules/postcss-loader/lib/index.js??ref--0-2!./Greeter.css", function() {
-			var newContent = require("!!../node_modules/css-loader/index.js??ref--0-1!../node_modules/postcss-loader/lib/index.js??ref--0-2!./Greeter.css");
+		module.hot.accept("!!../node_modules/css-loader/index.js??ref--0-1!../node_modules/postcss-loader/lib/index.js!./Greeter.css", function() {
+			var newContent = require("!!../node_modules/css-loader/index.js??ref--0-1!../node_modules/postcss-loader/lib/index.js!./Greeter.css");
 			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 			update(newContent);
 		});
@@ -22526,7 +22526,7 @@ exports = module.exports = __webpack_require__(187)(true);
 
 
 // module
-exports.push([module.i, "body {\r\n    background-color: bisque;\r\n}\r\n\r\n.greet-text {\r\n    color: red;\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: -ms-flexbox;\r\n    display: flex; /* 会受到 postcss-loader 的 autoprefixery影响 */\r\n    padding: 0;\r\n    margin: 0;\r\n    list-style: none;\r\n}", "", {"version":3,"sources":["D:/TUTOR/webpack sample project/app/D:/TUTOR/webpack sample project/Greeter.css"],"names":[],"mappings":"AAAA;IACI,yBAAyB;CAC5B;;AAED;IACI,WAAW;IACX,qBAAc;IAAd,sBAAc;IAAd,qBAAc;IAAd,cAAc,CAAC,0CAA0C;IACzD,WAAW;IACX,UAAU;IACV,iBAAiB;CACpB","file":"Greeter.css","sourcesContent":["body {\r\n    background-color: bisque;\r\n}\r\n\r\n.greet-text {\r\n    color: red;\r\n    display: flex; /* 会受到 postcss-loader 的 autoprefixery影响 */\r\n    padding: 0;\r\n    margin: 0;\r\n    list-style: none;\r\n}"],"sourceRoot":""}]);
+exports.push([module.i, "body {\r\n    background-color: bisque;\r\n}\r\n\r\n.greet-text {\r\n    color: red;\r\n    padding: 0;\r\n    margin: 0;\r\n    list-style: none;\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: -ms-flexbox;\r\n    display: flex; /* 会受到 postcss-loader 的 autoprefixery影响 */\r\n    background-image: url(" + __webpack_require__(188) + ");\r\n}", "", {"version":3,"sources":["D:/TUTOR/webpack sample project/app/Greeter.css"],"names":[],"mappings":"AAAA;IACI,yBAAyB;CAC5B;;AAED;IACI,WAAW;IACX,WAAW;IACX,UAAU;IACV,iBAAiB;IACjB,qBAAqB;IACrB,sBAAsB;IACtB,qBAAqB;IACrB,cAAc,CAAC,0CAA0C;IACzD,gDAAkC;CACrC","file":"Greeter.css","sourcesContent":["body {\r\n    background-color: bisque;\r\n}\r\n\r\n.greet-text {\r\n    color: red;\r\n    padding: 0;\r\n    margin: 0;\r\n    list-style: none;\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: -ms-flexbox;\r\n    display: flex; /* 会受到 postcss-loader 的 autoprefixery影响 */\r\n    background-image: url('./bg.png');\r\n}"],"sourceRoot":""}]);
 
 // exports
 
@@ -22617,6 +22617,12 @@ function toComment(sourceMap) {
 /* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__.p + "img/bg-2b7dc.png";
+
+/***/ }),
+/* 189 */
+/***/ (function(module, exports, __webpack_require__) {
+
 /*
 	MIT License http://www.opensource.org/licenses/mit-license.php
 	Author Tobias Koppers @sokra
@@ -22660,7 +22666,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(189);
+var	fixUrls = __webpack_require__(190);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -22973,7 +22979,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 189 */
+/* 190 */
 /***/ (function(module, exports) {
 
 

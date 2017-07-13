@@ -16,19 +16,7 @@ module.exports = {
                 use: [
                     {loader: "style-loader"},
                     {loader: "css-loader", options: {sourceMap: true}},
-                    {
-                        loader: "postcss-loader",
-                        options: {
-                            sourceMap: true,
-                            plugins: function () {
-                                return [
-                                    require('autoprefixer')({
-                                        browsers: ['last 5 versions']
-                                    })
-                                ];
-                            }
-                        }
-                    }
+                    {loader: "postcss-loader"}
                 ]
             },
             {
@@ -39,7 +27,38 @@ module.exports = {
                 options: {
                     presets: ["react", "env"]
                 }
-            }
+            },
+            {
+                test: /\.less$/,
+                use: [
+                    {loader: "style-loader"}, // creates style nodes from JS strings
+                    {loader: "css-loader", options: {sourceMap: true}},// translates CSS into CommonJS
+                    {loader: "postcss-loader"},
+                    {loader: "less-loader", options: {sourceMap: true}}// compiles Less to CSS
+                ]
+            },
+            {
+                test: /\.(png|jpg|jpeg|gif|woff)$/,
+                use:[
+                    {
+                        loader: 'file-loader', //会把css中url的图片和<img>引的图片，都做处理
+                        options:{
+                            name: 'img/[name]-[hash:5].[ext]'
+                        }
+                    },
+                    {
+                        loader:'image-webpack-loader',
+                    }
+                ]
+            },
+/*            {
+                test: /\.(png|jpg|jpeg|gif|woff)$/,
+                loader: 'url-loader',
+                options:{
+                    limit: 20000, // 20k，limit参数，代表如果小于大约4k则会自动帮你压缩成base64编码的图片,否则拷贝文件到生产目录
+                    name: 'img/[name]-[hash:5].[ext]'
+                }
+            }*/
         ]
     },
     plugins: [
@@ -53,6 +72,8 @@ module.exports = {
     devServer: {
         contentBase: __dirname,     // 如果设置成 __dirname + "/public"	:直接让localhost:7000指向/public中的index.html
         port: 7000
-    },
+    }
+    ,
     devtool: 'source-map'         //配置生成Source Maps，选择合适的选项
-};
+}
+;
