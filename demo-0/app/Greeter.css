@@ -8,5 +8,5 @@ body {
     margin: 0;
     list-style: none;
     display: flex; /* 会受到 postcss-loader 的 autoprefixery影响 */
-    background-image: url('./bg.png');
+    background-image: url('bg.png');
 }

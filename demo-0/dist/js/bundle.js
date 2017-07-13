@@ -22463,10 +22463,18 @@ var Greeter = function (_React$Component) {
     function Greeter() {
         _classCallCheck(this, Greeter);
 
-        return _possibleConstructorReturn(this, (Greeter.__proto__ || Object.getPrototypeOf(Greeter)).apply(this, arguments));
+        var _this = _possibleConstructorReturn(this, (Greeter.__proto__ || Object.getPrototypeOf(Greeter)).call(this));
+
+        _this.place = "Jinzhou";
+        return _this;
     }
 
     _createClass(Greeter, [{
+        key: 'getInfo',
+        value: function getInfo() {
+            return "Dalian";
+        }
+    }, {
         key: 'render',
         value: function render() {
             var name = "sfy";
@@ -22479,7 +22487,11 @@ var Greeter = function (_React$Component) {
                     { className: 'greet-text' },
                     ' \u4F60\u597D ',
                     name,
-                    ' \uFF01'
+                    ' ',
+                    this.getInfo(),
+                    ' ',
+                    this.place,
+                    '\uFF01'
                 )
             );
         }
@@ -22530,7 +22542,7 @@ exports = module.exports = __webpack_require__(187)(true);
 
 
 // module
-exports.push([module.i, "body {\r\n    background-color: bisque;\r\n}\r\n\r\n.greet-text {\r\n    color: red;\r\n    padding: 0;\r\n    margin: 0;\r\n    list-style: none;\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: -ms-flexbox;\r\n    display: flex; /* 会受到 postcss-loader 的 autoprefixery影响 */\r\n    background-image: url(" + __webpack_require__(188) + ");\r\n}", "", {"version":3,"sources":["D:/TUTOR/webpack sample project/app/Greeter.css"],"names":[],"mappings":"AAAA;IACI,yBAAyB;CAC5B;;AAED;IACI,WAAW;IACX,WAAW;IACX,UAAU;IACV,iBAAiB;IACjB,qBAAqB;IACrB,sBAAsB;IACtB,qBAAqB;IACrB,cAAc,CAAC,0CAA0C;IACzD,gDAAkC;CACrC","file":"Greeter.css","sourcesContent":["body {\r\n    background-color: bisque;\r\n}\r\n\r\n.greet-text {\r\n    color: red;\r\n    padding: 0;\r\n    margin: 0;\r\n    list-style: none;\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: -ms-flexbox;\r\n    display: flex; /* 会受到 postcss-loader 的 autoprefixery影响 */\r\n    background-image: url('./bg.png');\r\n}"],"sourceRoot":""}]);
+exports.push([module.i, "body {\r\n    background-color: bisque;\r\n}\r\n\r\n.greet-text {\r\n    color: red;\r\n    padding: 0;\r\n    margin: 0;\r\n    list-style: none;\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: -ms-flexbox;\r\n    display: flex; /* 会受到 postcss-loader 的 autoprefixery影响 */\r\n    background-image: url(" + __webpack_require__(188) + ");\r\n}", "", {"version":3,"sources":["D:/java projects/webpack-sample-project/demo-0/app/Greeter.css"],"names":[],"mappings":"AAAA;IACI,yBAAyB;CAC5B;;AAED;IACI,WAAW;IACX,WAAW;IACX,UAAU;IACV,iBAAiB;IACjB,qBAAqB;IACrB,sBAAsB;IACtB,qBAAqB;IACrB,cAAc,CAAC,0CAA0C;IACzD,gDAAgC;CACnC","file":"Greeter.css","sourcesContent":["body {\r\n    background-color: bisque;\r\n}\r\n\r\n.greet-text {\r\n    color: red;\r\n    padding: 0;\r\n    margin: 0;\r\n    list-style: none;\r\n    display: -webkit-box;\r\n    display: -webkit-flex;\r\n    display: -ms-flexbox;\r\n    display: flex; /* 会受到 postcss-loader 的 autoprefixery影响 */\r\n    background-image: url('bg.png');\r\n}"],"sourceRoot":""}]);
 
 // exports
 
