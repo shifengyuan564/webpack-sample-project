@@ -9801,7 +9801,8 @@ var Main = function (_React$Component) {
     return Main;
 }(_react2.default.Component);
 
-_reactDom2.default.render(_react2.default.createElement(Main, null), document.getElementById("root"));
+var root = document.getElementById("root");
+_reactDom2.default.render(_react2.default.createElement(Main, null), root);
 
 /***/ }),
 /* 83 */
@@ -22468,6 +22469,7 @@ var Greeter = function (_React$Component) {
     _createClass(Greeter, [{
         key: 'render',
         value: function render() {
+            var name = "sfy";
             return _react2.default.createElement(
                 'h2',
                 null,
@@ -22475,7 +22477,9 @@ var Greeter = function (_React$Component) {
                 _react2.default.createElement(
                     'span',
                     { className: 'greet-text' },
-                    ' \u4F60\u597D \uFF01'
+                    ' \u4F60\u597D ',
+                    name,
+                    ' \uFF01'
                 )
             );
         }
