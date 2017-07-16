@@ -7,7 +7,8 @@ module.exports = {
     entry: './js/client.js',
     output: {
         path: __dirname + "/src/",
-        filename: "client.min.js"
+        filename: "client.min.js",
+        publicPath: 'http://localhost:8000'
     },
     module: {
         rules: [
@@ -31,7 +32,11 @@ module.exports = {
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({mangle: false, sourcemap: false})
     ],
-
+    devServer: {
+        historyApiFallback: true,
+        contentBase: './src',
+        hot: true
+    },
     devtool: debug ? 'source-map' : null         //配置生成Source Maps，选择合适的选项
 }
 ;
