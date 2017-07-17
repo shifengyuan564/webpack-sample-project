@@ -16,7 +16,7 @@ export default class Layout extends React.Component {
     render() {
         return (
             <div>
-                <Link to="movies-list">Movies</Link> | <Link to="characters-list">Characters</Link>
+                <Link to="/movies-list">Movies</Link> | <Link to="/characters-list">Characters</Link>
                 <h1>{this.state.welcome}</h1>
                 <div>
                     <switch>
@@ -24,7 +24,6 @@ export default class Layout extends React.Component {
                         <Route path="/characters-list/:character" component={Characters}/>
                     </switch>
                 </div>
-
             </div>
         );
     }

@@ -3,9 +3,7 @@ import React from 'react';
 export default class Movie extends React.Component {
 
     render(){
-        const {
-            title, episode_id, opening_crawl, director, producer, release_date
-        } = this.props;
+        const {title, episode_id, opening_crawl, director, producer, release_date} = this.props;
 
         return (
             <li>

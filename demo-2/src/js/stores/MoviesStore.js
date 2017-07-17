@@ -20,7 +20,6 @@ class MoviesStore extends EventEmitter {
                 "producer": "Gary Kurtz",
                 "release_date": "1989"
             },
-
         ];
     }
 
@@ -29,5 +28,5 @@ class MoviesStore extends EventEmitter {
     }
 }
 
-const moviesStore =  new MoviesStore();
+const moviesStore =  new MoviesStore;
 export default moviesStore;

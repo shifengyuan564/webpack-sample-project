@@ -13,11 +13,9 @@ export default class Movies extends React.Component {
     }
 
     render() {
-
         const {movies} = this.state;
         const movieList = movies.map((movie) => {
             return <Movie key={movie.episode_id} {...movie}/>
-
         });
 
         return (
