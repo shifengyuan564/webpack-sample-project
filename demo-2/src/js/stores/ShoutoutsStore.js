@@ -25,7 +25,7 @@ class ShoutoutsStore extends EventEmitter {
     actionListener(action) {
         switch (action.type) {
             case "CREATE_SHOUTOUT": {
-                this.createShoutout(action.shoutout, action.name);
+                this.addShoutout(action.shoutout, action.name);
                 break;
             }
             default:
@@ -33,7 +33,7 @@ class ShoutoutsStore extends EventEmitter {
         }
     }
 
-    createShoutout(shoutout, name) {
+    addShoutout(shoutout, name) {
         let newSO = {}; // new Object();
         newSO.id = Date.now().toString();
         newSO.shoutout = shoutout;

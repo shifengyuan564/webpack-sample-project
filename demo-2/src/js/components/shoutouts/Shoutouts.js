@@ -14,18 +14,22 @@ export default class Shoutouts extends React.Component {
             shoutoutsList: ShoutoutsStore.getShoutouts()
         };
 
-        this.handleNewShoutout= this.handleNewShoutout.bind(this);
+        this.handleNewShoutout = this.handleNewShoutout.bind(this);
         this.handleNewName = this.handleNewName.bind(this);
         this.getShoutoutList = this.getShoutoutList.bind(this);
     }
 
+    /*
+     componentWillMount     在页面被渲染(render方法)之前执行，一般在componentWillMount中触发请求数据的方法
+     componentDidMount      类似js中的window.onload，执行在render方法之后，也就是页面的组件渲染完毕之后
+     componentWillUnmount   组件要被从界面上移除的时候，就会调用
+     */
     componentWillMount() {
         ShoutoutsStore.on("newShoutout", this.getShoutoutList);
     }
     componentWillUnmount() {
         ShoutoutsStore.removeListener("newShoutout", this.getShoutoutList);
     }
-
 
     handleNewShoutout(e) {
         this.setState({newShoutout: e.target.value});
@@ -38,7 +42,7 @@ export default class Shoutouts extends React.Component {
         this.setState({shoutoutsList: ShoutoutsStore.getShoutouts()});
     }
 
-    createShoutout(){
+    createShoutout() {
         ShoutoutActions.createShoutout(
             this.state.newShoutout, this.state.newName
         );
