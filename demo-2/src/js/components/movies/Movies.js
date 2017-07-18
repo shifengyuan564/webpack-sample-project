@@ -2,6 +2,7 @@ import React from 'react';
 
 import Movie from '../../components/movie/Movie';
 import MoviesStore from '../../stores/MoviesStore';
+import Shoutouts from '../shoutouts/Shoutouts';
 
 export default class Movies extends React.Component {
 
@@ -22,6 +23,7 @@ export default class Movies extends React.Component {
             <div>
                 <h2>Movie List</h2>
                 <ul>{movieList}</ul>
+                <Shoutouts/>
             </div>
         );
     }

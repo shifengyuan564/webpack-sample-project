@@ -34,7 +34,7 @@ class ShoutoutsStore extends EventEmitter {
     }
 
     createShoutout(shoutout, name) {
-        let newSO = new Object();
+        let newSO = {}; // new Object();
         newSO.id = Date.now().toString();
         newSO.shoutout = shoutout;
         newSO.name = name;
