@@ -10,7 +10,10 @@ export default class Layout extends React.Component {
         this.state = {
             welcome: "Welcome to Star Wars Trivia !",
             layoutInfo: "No Shoutouts!"
-        }
+        };
+
+        /*This binding is necessary to make `this` work in the callback*/
+        this.changeTypeText = this.changeTypeText.bind(this)
     }
 
     changeTypeText(inputVal) {
@@ -31,7 +34,8 @@ export default class Layout extends React.Component {
 
                 <Movies shoutout={this.state.layoutInfo}
                         question={movieQuestion}
-                        createShoutOut={this.changeTypeText.bind(this)}/>
+                        createShoutOut={this.changeTypeText}/>
+
 
                 <Characters question={characterQuestion}/>
             </div>
