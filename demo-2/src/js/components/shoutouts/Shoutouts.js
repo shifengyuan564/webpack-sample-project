@@ -17,6 +17,7 @@ export default class Shoutouts extends React.Component {
         this.handleNewShoutout = this.handleNewShoutout.bind(this);
         this.handleNewName = this.handleNewName.bind(this);
         this.getShoutoutList = this.getShoutoutList.bind(this);
+        this.createShoutout = this.createShoutout.bind(this);
     }
 
     /*
@@ -27,6 +28,7 @@ export default class Shoutouts extends React.Component {
     componentWillMount() {
         ShoutoutsStore.on("newShoutout", this.getShoutoutList);
     }
+
     componentWillUnmount() {
         ShoutoutsStore.removeListener("newShoutout", this.getShoutoutList);
     }
@@ -34,6 +36,7 @@ export default class Shoutouts extends React.Component {
     handleNewShoutout(e) {
         this.setState({newShoutout: e.target.value});
     }
+
     handleNewName(e) {
         this.setState({newName: e.target.value});
     }
@@ -42,10 +45,9 @@ export default class Shoutouts extends React.Component {
         this.setState({shoutoutsList: ShoutoutsStore.getShoutouts()});
     }
 
+    // view -> action -> dispatcher -> store -> view
     createShoutout() {
-        ShoutoutActions.createShoutout(
-            this.state.newShoutout, this.state.newName
-        );
+        ShoutoutActions.createAction(this.state.newShoutout, this.state.newName);
     }
 
     render() {
@@ -57,7 +59,7 @@ export default class Shoutouts extends React.Component {
                 <h2>Shoutouts List</h2>
                 <input type="text" value={this.state.newShoutout} onChange={this.handleNewShoutout}/>
                 <input type="text" value={this.state.newName} onChange={this.handleNewName}/>
-                <button onClick={this.createShoutout.bind(this)}>Create Shoutout</button>
+                <button onClick={this.createShoutout}>Create Shoutout</button>
                 <ul>{ShoutoutComponents}</ul>
             </div>
         );

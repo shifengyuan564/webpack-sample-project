@@ -33,6 +33,7 @@ class ShoutoutsStore extends EventEmitter {
         }
     }
 
+    // view -> action -> dispatcher -> store -> view
     addShoutout(shoutout, name) {
         let newSO = {}; // new Object();
         newSO.id = Date.now().toString();

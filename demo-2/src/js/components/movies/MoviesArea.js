@@ -4,20 +4,18 @@ import Movie from '../../components/movie/Movie';
 import MoviesStore from '../../stores/MoviesStore';
 import Shoutouts from '../shoutouts/Shoutouts';
 
-export default class Movies extends React.Component {
+export default class MoviesArea extends React.Component {
 
     constructor() {
         super();
         this.state = {
-            movies: MoviesStore.getMovies()
+            moviesList: MoviesStore.getMovies()
         };
     }
 
     render() {
-        const {movies} = this.state;
-        const movieList = movies.map((movie) => {
-            return <Movie key={movie.episode_id} {...movie}/>
-        });
+        const {moviesList} = this.state;
+        const movieList = moviesList.map((movie) => <Movie key={movie.episode_id} {...movie}/>);
 
         return (
             <div>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class Characters extends React.Component {
+export default class CharactersArea extends React.Component {
     render() {
         return (
             <div>

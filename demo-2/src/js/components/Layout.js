@@ -1,8 +1,8 @@
 import React from 'react';
-import {Link, Route, BrowserRouter} from 'react-router-dom';    // Routing Libraries
+import {Link, Route} from 'react-router-dom';    // Routing Libraries
 
-import Movies from './movies/Movies';
-import Characters from './characters/Characters';
+import MoviesArea from './movies/MoviesArea';
+import CharactersArea from './characters/CharactersArea';
 
 export default class Layout extends React.Component {
 
@@ -16,12 +16,12 @@ export default class Layout extends React.Component {
     render() {
         return (
             <div>
-                <Link to="/movies-list">Movies</Link> | <Link to="/characters-list">Characters</Link>
+                <Link to="/moviesArea">Movies</Link> | <Link to="/charactersArea">Characters</Link>
                 <h1>{this.state.welcome}</h1>
                 <div>
                     <switch>
-                        <Route path="/movies-list" component={Movies}/>
-                        <Route path="/characters-list/:character" component={Characters}/>
+                        <Route path="/moviesArea" component={MoviesArea}/>
+                        <Route path="/charactersArea/:character" component={CharactersArea}/>
                     </switch>
                 </div>
             </div>
