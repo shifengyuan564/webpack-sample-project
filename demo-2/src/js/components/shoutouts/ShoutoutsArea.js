@@ -14,8 +14,7 @@ export default class ShoutoutsArea extends React.Component {
             shoutoutsList: ShoutoutsStore.getShoutouts()
         };
 
-        this.handleNewShoutout = this.handleNewShoutout.bind(this);
-        this.handleNewName = this.handleNewName.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
         this.getShoutoutList = this.getShoutoutList.bind(this);
         this.createShoutout = this.createShoutout.bind(this);
     }
@@ -33,12 +32,10 @@ export default class ShoutoutsArea extends React.Component {
         ShoutoutsStore.removeListener("newSoEvent", this.getShoutoutList);
     }
 
-    handleNewShoutout(e) {
-        this.setState({newShoutout: e.target.value});
-    }
-
-    handleNewName(e) {
-        this.setState({newName: e.target.value});
+    /*setState() with a dynamic key name*/
+    handleInputChange(e) {
+        const name = e.target.name;
+        this.setState({[name]: e.target.value});
     }
 
     getShoutoutList() {
@@ -46,7 +43,8 @@ export default class ShoutoutsArea extends React.Component {
     }
 
     // view -> action -> dispatcher -> store -> view
-    createShoutout() {
+    createShoutout(e) {
+        e.preventDefault();  //阻止默认行为（表单提交时，页面刷新）
         ShoutoutActions.createAction(this.state.newShoutout, this.state.newName);
     }
 
@@ -57,9 +55,20 @@ export default class ShoutoutsArea extends React.Component {
         return (
             <div>
                 <h2>Shoutouts List</h2>
-                <input type="text" value={this.state.newShoutout} onChange={this.handleNewShoutout}/>
-                <input type="text" value={this.state.newName} onChange={this.handleNewName}/>
-                <button onClick={this.createShoutout}>Create Shoutout</button>
+                <form onSubmit={this.createShoutout} action="">
+                    <label> Shoutout:
+                        <input name="newShoutout" type="text"
+                               value={this.state.newShoutout}
+                               onChange={this.handleInputChange}/>
+                    </label>
+                    <label> Author:
+                        <input name="newName" type="text"
+                               value={this.state.newName}
+                               onChange={this.handleInputChange}/>
+                    </label>
+                    <input type="submit" value="Shout It!"/>
+                </form>
+
                 <ul>{soDomList}</ul>
             </div>
         );
