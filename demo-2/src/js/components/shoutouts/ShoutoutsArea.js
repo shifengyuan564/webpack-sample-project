@@ -4,7 +4,7 @@ import Shoutout from '../shoutout/Shoutout';
 import * as ShoutoutActions from '../../actions/ShoutoutActions';
 import ShoutoutsStore from '../../stores/ShoutoutsStore';
 
-export default class Shoutouts extends React.Component {
+export default class ShoutoutsArea extends React.Component {
 
     constructor() {
         super();
@@ -26,11 +26,11 @@ export default class Shoutouts extends React.Component {
      componentWillUnmount   组件要被从界面上移除的时候，就会调用
      */
     componentWillMount() {
-        ShoutoutsStore.on("newShoutout", this.getShoutoutList);
+        ShoutoutsStore.on("newSoEvent", this.getShoutoutList);
     }
 
     componentWillUnmount() {
-        ShoutoutsStore.removeListener("newShoutout", this.getShoutoutList);
+        ShoutoutsStore.removeListener("newSoEvent", this.getShoutoutList);
     }
 
     handleNewShoutout(e) {
@@ -52,7 +52,7 @@ export default class Shoutouts extends React.Component {
 
     render() {
         const soList = this.state.shoutoutsList;
-        const ShoutoutComponents = soList.map((so) => <Shoutout key={so.id} {...so}/>);
+        const soDomList = soList.map((so) => <Shoutout key={so.id} {...so}/>);
 
         return (
             <div>
@@ -60,7 +60,7 @@ export default class Shoutouts extends React.Component {
                 <input type="text" value={this.state.newShoutout} onChange={this.handleNewShoutout}/>
                 <input type="text" value={this.state.newName} onChange={this.handleNewName}/>
                 <button onClick={this.createShoutout}>Create Shoutout</button>
-                <ul>{ShoutoutComponents}</ul>
+                <ul>{soDomList}</ul>
             </div>
         );
     }

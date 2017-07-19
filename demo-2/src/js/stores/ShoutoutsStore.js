@@ -41,7 +41,7 @@ class ShoutoutsStore extends EventEmitter {
         newSO.name = name;
 
         this.shoutouts.push(newSO);
-        this.emit("newShoutout");
+        this.emit("newSoEvent");
     }
 
     getShoutouts() {
@@ -50,6 +50,6 @@ class ShoutoutsStore extends EventEmitter {
 }
 
 const shoutoutsStore = new ShoutoutsStore();
-dispatcher.register(shoutoutsStore.actionListener);
+dispatcher.register(shoutoutsStore.actionListener); // 注册dispatcher, 操作store, 利用emit对view动态回显
 
 export default shoutoutsStore;
