@@ -45,7 +45,7 @@ export default class Layout extends React.Component {
                             <switch>
                                 <Route exact path="/moviesArea" component={MoviesArea}/>
                                 <Route exact path="/charactersArea" component={CharactersArea}/>
-                                <Route exact path="/charactersArea/:cha_name" component={CharactersArea}/>
+                                 <Route exact path="/charactersArea/:cha_name" component={CharactersArea}/>
                             </switch>
                         </div>
                     </div>
