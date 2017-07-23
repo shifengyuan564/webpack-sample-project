@@ -23,8 +23,7 @@ export default class Card extends React.Component {
 
         return (
             <div className="card">
-                <div className="card__title"
-                     onClick={() => this.setState({showDetails: !this.state.showDetails})}>
+                <div className="card__title" onClick={() => this.setState({showDetails: !this.state.showDetails})}>
                     {this.props.title}
                 </div>
                 {cardDetails}

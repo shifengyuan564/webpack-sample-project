@@ -3,12 +3,7 @@ import Card from './Card';
 
 export default class ListItems extends React.Component {
     render() {
-        let cards = this.props.cards.map((card) =>
-            <Card id={card.id}
-                  title={card.title}
-                  description={card.description}
-                  tasks={card.tasks}/>
-        );
+        let cards = this.props.cards.map((card) => <Card key={card.id} {...card}/>);
 
         return (
             <div className="list">

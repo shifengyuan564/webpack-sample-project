@@ -7,7 +7,11 @@ demo-2: Starting with React 19-节，route\flux\form\bootstrap+css
 demo-3:
 
 
+Packt Publishing – Learning React.js User Interfaces
+demo-4:Building React.js User Interfaces with Bootstrap and SASS
+动态tag，动态className，提取util方法，es6字符串模板&反单引号
+
+
+
 Tutsplus - React Deep Dive Build a React App With Webpack
-demo-4:
-
-
+demo-5:
