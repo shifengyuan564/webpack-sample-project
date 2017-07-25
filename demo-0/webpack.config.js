@@ -75,5 +75,12 @@ module.exports = {
     }
     ,
     devtool: 'source-map'         //配置生成Source Maps，选择合适的选项
-}
-;
+};
+
+
+/*
+css-loader 是处理css文件中的url()等
+style-loader 将css插入到页面的style标签顺便告诉你
+less-loader 是将less文件编译成css
+sass-loader 是将sass文件编译成css
+*/

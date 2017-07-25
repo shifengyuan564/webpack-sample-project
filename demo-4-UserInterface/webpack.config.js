@@ -17,10 +17,10 @@ module.exports = {
 
         }, {
             test: /\.css$/,
-            use: ExtractTextPlugin.extract({
-                fallback: "style-loader",
-                use: ['css-loader']
-            })
+            use: ExtractTextPlugin.extract(['css-loader'])
+        }, {
+            test: /\.(scss|sass)$/,
+            use: ExtractTextPlugin.extract(['css-loader', 'sass-loader'])
         }]
     },
     plugins: [
