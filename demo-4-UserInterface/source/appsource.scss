@@ -1,0 +1,33 @@
+@mixin bgColor-it($val){
+  background-color : $val;
+}
+
+$bgColor : rgba(239, 190, 150, 0.21);
+
+.custom {
+  @include bgColor-it($bgColor);
+}
+
+.app-appear{
+  opacity: 0.01;
+  &-active{
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+  }
+}
+
+.app-enter{
+  opacity: 0.01;
+  &-active{
+    opacity: 1;
+    transition: opacity 5s ease-in;
+  }
+}
+
+.app-leave{
+  opacity: 1;
+  &-active{
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+  }
+}

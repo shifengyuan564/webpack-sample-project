@@ -1,6 +1,10 @@
-
 // dynamic generate className
 export function classify(key, value) {
+
+    if (typeof(value) === "undefined") {
+        return;
+    }
+
     if (value[0] === "-") {
         value = key + value;
     }

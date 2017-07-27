@@ -9,7 +9,7 @@ demo-3:
 
 Packt Publishing – Learning React.js User Interfaces
 demo-4:Building React.js User Interfaces with Bootstrap and SASS
-动态tag，动态className，提取util方法，es6字符串模板&反单引号
+动态tag，动态className，提取util方法，es6字符串模板&反单引号，sass/scss
 dev启动：直接npm start, 浏览器访问localhost:3000
 
 
