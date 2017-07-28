@@ -14,5 +14,5 @@ dev启动：直接npm start, 浏览器访问localhost:3000
 
 
 
-Tutsplus - React Deep Dive Build a React App With Webpack
+Tutsplus - React Deep Dive Build a React App With Webpack (HAR Viewer)
 demo-5:
