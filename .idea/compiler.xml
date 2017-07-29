@@ -17,10 +17,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring4-mvc-maven-ajax-example" />
+        <module name="webbf" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="spring4-mvc-maven-ajax-example" target="1.8" />
+      <module name="webbf" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
