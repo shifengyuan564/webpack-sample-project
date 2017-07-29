@@ -1,5 +1,3 @@
-var htmlWebpackPlugin = require('html-webpack-plugin');
-
 module.exports = {
     entry: {
         app: __dirname + "/src/app.jsx"
@@ -14,8 +12,7 @@ module.exports = {
                 test: /\.css$/,     // 以css结尾的文件
                 use: [
                     {loader: "style-loader"},
-                    {loader: "css-loader", options: {sourceMap: true}},
-                    {loader: "postcss-loader"}
+                    {loader: "css-loader", options: {sourceMap: true}}
                 ]
             },
             {
@@ -32,7 +29,7 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ["react", "env"],
+                        presets: ["react", "env", "stage-0"],
                         plugins: ['transform-runtime']
                     }
                 }
@@ -46,11 +43,6 @@ module.exports = {
         ]
     },
 
-    plugins: [
-        new htmlWebpackPlugin({
-            title: "HAR Viewer (React Deep Dive)"
-        })
-    ],
 
     devtool: 'source-map'
 };
