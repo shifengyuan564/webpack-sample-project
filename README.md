@@ -19,3 +19,6 @@ demo-5:npm start, 浏览器访问8000端口
 
 1. npm install --save react@15.4.0 react-dom@15.4.0 (若用15.5+则会报warning)
 2. 新加了Input.js文件，需要stage-0的支持
+
+
+demo-6: github上的spring-mvc-react项目
