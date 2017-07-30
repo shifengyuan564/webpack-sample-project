@@ -22,3 +22,8 @@ demo-5:npm start, 浏览器访问8000端口
 
 
 demo-6: github上的spring-mvc-react项目
+
+demo-7: 中国人写的springmvc + mybatis + react项目
+首先，控制台cmd到webbf目录，执行npm run build命令；
+然后，maven执行mvn clean tomcat:run命令；或下载eclipse for javaee，打开pom.xml，右键执行mvn clean tomcat:run命令；
+最后：浏览器访问即可
