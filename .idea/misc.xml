@@ -77,7 +77,6 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/demo-6-springmvc/pom.xml" />
-        <option value="$PROJECT_DIR$/demo-7-wind-coder/pom.xml" />
       </list>
     </option>
   </component>
@@ -86,20 +85,4 @@
     <preferredVcsName>ApexVCS</preferredVcsName>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
-  <component name="masterDetails">
-    <states>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.7</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
-  </component>
 </project>
