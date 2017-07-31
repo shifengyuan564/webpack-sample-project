@@ -27,3 +27,5 @@ demo-7: springmvc + mybatis + react项目
 首先，控制台cmd到webbf目录，执行npm run build命令；
 然后，maven执行mvn clean tomcat:run命令；或下载eclipse for javaee，打开pom.xml，右键执行mvn clean tomcat:run命令；
 最后：浏览器访问即可
+
+Learning Path - React - Make Stunning React Websites  (2017.04)
