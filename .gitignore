@@ -1,9 +1,9 @@
 # Created by .ignore support plugin (hsz.mobi)
 
-.idea/
+#.idea/
 node_modules/
 bower_components/
 .gitignore
 npm-debug.log
-*.iml
+#*.iml
 demo-7-wind-coder/target/
