@@ -76,8 +76,8 @@
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>
-        <option value="$PROJECT_DIR$/demo-6-springmvc/pom.xml" />
         <option value="$PROJECT_DIR$/demo-7-wind-coder/pom.xml" />
+        <option value="$PROJECT_DIR$/demo-6-springmvc/pom.xml" />
       </list>
     </option>
   </component>

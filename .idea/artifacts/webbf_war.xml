@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="webbf:war">
+    <output-path>$PROJECT_DIR$/demo-7-wind-coder/target</output-path>
+    <root id="archive" name="webbf.war">
+      <element id="artifact" artifact-name="webbf:war exploded" />
+    </root>
+  </artifact>
+</component>
