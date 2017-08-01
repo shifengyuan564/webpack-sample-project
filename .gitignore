@@ -3,7 +3,6 @@
 .idea/
 node_modules/
 bower_components/
-.gitignore
 npm-debug.log
 *.iml
 demo-7-wind-coder/target/
