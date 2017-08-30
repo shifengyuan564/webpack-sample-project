@@ -5,10 +5,11 @@ import registerServiceWorker from './registerServiceWorker';
 
 import {
     //constAndLet,
-    //arrowFunctions
-    //destructuring
-    //objAssemblyComputedProps
-    spreadOperator
+    //arrowFunctions,
+    //destructuring,
+    //objAssemblyComputedProps,
+    //spreadOperator,
+    templateLiterals
 } from './examples';
 
 
@@ -16,7 +17,9 @@ import {
 //arrowFunctions();
 //destructuring();
 //objAssemblyComputedProps();
-spreadOperator();
+//spreadOperator();
+
+templateLiterals();
 
 ReactDOM.render(<App/>, document.getElementById('root'));
 registerServiceWorker();

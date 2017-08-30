@@ -66,16 +66,16 @@ let options = () => {
         },
         body: JSON.stringify({
             query: `{
-                    allPoems(
-                      first: 1
-                      skip: ${rando.randomInt(0, 160)}
-                    ) {
-                      title
-                      author
-                      lines
-                      text
-                    }
-                  }`
+                allPoems(
+                  first: 1
+                  skip: ${rando.randomInt(0, 160)}
+                ) {
+                  title
+                  author
+                  lines
+                  text
+                }
+              }`
         })
     }
 };
