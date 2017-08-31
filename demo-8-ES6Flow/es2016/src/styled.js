@@ -6,7 +6,6 @@ export const Container = styled.div`
   margin: auto;
   justify-content: space-around;
 `;
-
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
@@ -16,24 +15,18 @@ export const Row = styled.div`
   flex-direction: row;
   margin: 10px;
 `;
-
 export const RuleInput = styled.input`
   padding: 5px;
 `;
-
 export const RuleLabel = styled.label`
 `;
-
 export const StyleInput = styled.textarea`
   margin: 0;
   border: 0;
   padding: 5px;
 `;
-
 export const Button = styled.button`
-
 `;
-
 export const Document = styled.div`
   display: flex;
   width: 550px;
@@ -41,7 +34,6 @@ export const Document = styled.div`
   padding: 10px;
   border: 1px solid black;
 `;
-
 export const Editor = styled.textarea`
   position: absolute;
   margin: 0;
@@ -58,7 +50,6 @@ export const Editor = styled.textarea`
   font-family: monospace;
   caret-color: black;
 `;
-
 export const Markup = styled.div`
   height: 100%;
   width: 100%;

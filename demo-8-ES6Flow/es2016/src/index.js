@@ -9,7 +9,8 @@ import {
     //destructuring,
     //objAssemblyComputedProps,
     //spreadOperator,
-    templateLiterals
+    //templateLiterals,
+    functionArgs
 } from './examples';
 
 
@@ -18,8 +19,8 @@ import {
 //destructuring();
 //objAssemblyComputedProps();
 //spreadOperator();
-
-templateLiterals();
+//templateLiterals();
+functionArgs();
 
 ReactDOM.render(<App/>, document.getElementById('root'));
 registerServiceWorker();
