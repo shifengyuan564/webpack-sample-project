@@ -1,10 +1,11 @@
 import React, {Component} from 'react';
 import hljs from 'highlight.js';
-
+import {rando, getRandomPoem} from './utils';
 import {
     Markup, Editor, Container, Column, Row,
     RuleInput, RuleLabel, StyleInput, Button, Document
 } from './styled'
+
 
 class App extends Component {
 
@@ -40,17 +41,32 @@ class App extends Component {
         }
     };
 
-    language(newRules) {
-        return {
-            contains: [...newRules]
+    prepareStyles = () => {
+        let {rulesNum} = this.state;
+        let styles = [];
+        for (let i = 0; i < rulesNum; i++) {
+            styles.push(`
+                .hljs-${this.state["name" + i]} {
+                    ${this.state["style"+i]}
+                }
+            `)
         }
+        let newStyles= "".concat(styles).replace(",","");
+        console.log(newStyles);
+        return newStyles;
+    };
+
+    language(newRules) {
+        return () => ({
+            contains: [...newRules]
+        })
     }
 
     registerLanguage(state) {
-        let {rules} = state;
+        let {rulesNum} = state;
         let ruleObjects = [];
 
-        for (let i = 0; i < rules; i++) {
+        for (let i = 0; i < rulesNum; i++) {
 
             let newRule = {
                 className: state[`name${i}`],
@@ -69,8 +85,12 @@ class App extends Component {
 
         hljs.registerLanguage("language", this.language(ruleObjects));
         hljs.configure({languages: ['language']});
-
     }
+
+    componentWillUpdate(nextProps, nextState) {
+        this.registerLanguage(nextState)
+    }
+
 
     rules() {
         let {rulesNum} = this.state;
@@ -131,13 +151,9 @@ class App extends Component {
         })
     };
 
-    componentWillUpdate(nextProps, nextState) {
-        this.registerLanguage(nextState);
-    }
-
     render() {
         let {editor} = this.state;
-        let {handleChange, newFields, rules, convertToMarkup} = this;
+        let {handleChange, newFields, rules, convertToMarkup, prepareStyles} = this;
 
         return (
             //  {...props} : pass all parent's props to this child component
@@ -149,8 +165,11 @@ class App extends Component {
                 <Column>
                     <Button>Random Text</Button>
                     <Document>
-                        <Editor name={"Editor"} value={editor} onChange={handleChange}/>
-                        <Markup dangerouslySetInnerHTML={convertToMarkup(editor)}/>
+                        <Editor name={"editor"} value={editor} onChange={handleChange}/>
+                        <Markup
+                            customStyles={prepareStyles()}
+                            dangerouslySetInnerHTML={convertToMarkup(editor)}
+                        />
                     </Document>
                 </Column>
             </Container>

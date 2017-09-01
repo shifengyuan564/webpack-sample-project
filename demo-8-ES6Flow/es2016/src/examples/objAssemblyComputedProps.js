@@ -4,7 +4,6 @@ export function objAssemblyComputedProps() {
     // variable and turn it into a key value pair
     let superPower = 'Laser eyes';
     let weaknesses = ['puppies'];
-    let cape = false;
 
     // when I create a new object, I can pass in my own key-value pairs
     // or I can use this short hand to add variables I've already created
