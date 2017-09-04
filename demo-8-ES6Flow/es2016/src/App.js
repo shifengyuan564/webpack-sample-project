@@ -9,8 +9,8 @@ import {
 
 class App extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             editor: "",
             name0: "",
@@ -47,13 +47,36 @@ class App extends Component {
         for (let i = 0; i < rulesNum; i++) {
             styles.push(`
                 .hljs-${this.state["name" + i]} {
-                    ${this.state["style"+i]}
+                    ${this.state["style" + i]}
                 }
             `)
         }
-        let newStyles= "".concat(styles).replace(",","");
-        console.log(newStyles);
+        let newStyles = "".concat(styles).replace(",", "");
+        //console.log(newStyles);
+
+        while(newStyles.includes('random')){
+            newStyles = newStyles.replace('random', rando.color());
+        }
+
         return newStyles;
+    };
+
+
+// console.log(rando.types);
+// console.log(rando.randomInt(1, 10));
+
+    getRandomText = async () => {
+        try {
+            let poem = await getRandomPoem();
+            this.handleChange({
+                target: {
+                    name: 'editor',
+                    value: poem
+                }
+            })
+        } catch (error) {
+            console.log("getRandomPoem error", error);
+        }
     };
 
     language(newRules) {
@@ -153,7 +176,7 @@ class App extends Component {
 
     render() {
         let {editor} = this.state;
-        let {handleChange, newFields, rules, convertToMarkup, prepareStyles} = this;
+        let {handleChange, newFields, rules, convertToMarkup, prepareStyles, getRandomText} = this;
 
         return (
             //  {...props} : pass all parent's props to this child component
@@ -163,7 +186,7 @@ class App extends Component {
                     <Button onClick={newFields}>New Rule</Button>
                 </Column>
                 <Column>
-                    <Button>Random Text</Button>
+                    <Button onClick={getRandomText}>Random Text</Button>
                     <Document>
                         <Editor name={"editor"} value={editor} onChange={handleChange}/>
                         <Markup

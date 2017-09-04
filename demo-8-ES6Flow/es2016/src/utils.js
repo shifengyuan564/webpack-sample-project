@@ -20,15 +20,6 @@ class Random {
 
 class ColorGenerator extends Random {
 
-    constructor(max, allowNegatives, type = "rgb") {
-        super(max, allowNegatives);
-        if (this.typeList.includes(type)) {
-            this.type = type;
-        } else {
-            this.type = "rgb";
-        }
-    }
-
     typeList = ["hex", "rgb"];
 
     get types() {
@@ -41,13 +32,24 @@ class ColorGenerator extends Random {
         }
     }
 
+    constructor(max, allowNegatives, type = "rgb") {
+
+        super(max, allowNegatives);
+
+        if (this.typeList.includes(type)) {
+            this.type = type;
+        } else {
+            this.type = "rgb";
+        }
+    }
+
     color() {
         let r = super.randomInt(0, 255);
         let g = super.randomInt(0, 255);
         let b = super.randomInt(0, 255);
 
         if (this.type === 'hex') {
-            return `#${r.toString(16)}${g.toString(16)}${b.toString(16)}`;
+            return `#${r.toString(16)}${g.toString(16)}${b.toString(16)}`;      //转换成16进制
         } else {
             return `rgb(${r}, ${g}, ${b})`;
         }
@@ -80,10 +82,28 @@ let options = () => {
     }
 };
 
+/* ================  利用Fetch代替$.ajax ===========================*/
+/* 1. 使用 Fetch
+    fetch(url).then(function(response) {
+        return response.json();
+    }).then(function(data) {
+        console.log(data);
+    }).catch(function(e) {
+        console.log("Oops, error");
+    });
+*/
+
+/* 2. 使用 ES6 的 箭头函数 */
+fetch(shakespeareApi, options())
+    .then(response => response.json())
+    .then(json => console.log(json))
+    .catch((e) => console.log("Oops, error",e));
+
+/* 3. 使用 ES7 的async/await 来做优化 */
 export async function getRandomPoem() {
     try {
         let result = await fetch(shakespeareApi, options());
-        let response = await result.json();
+        let response = await result.json(); // 这里可以不加await
         let poem = response.data.allPoems[0];
         return poem.text;
     } catch (error) {

@@ -10,7 +10,8 @@ import {
     //objAssemblyComputedProps,
     //spreadOperator,
     //templateLiterals,
-    //functionArgs
+    //functionArgs,
+    promises
 } from './examples';
 
 
@@ -21,6 +22,7 @@ import {
 //spreadOperator();
 //templateLiterals();
 //functionArgs();
+promises();
 
 ReactDOM.render(<App/>, document.getElementById('root'));
 registerServiceWorker();
