@@ -30,5 +30,8 @@ demo-7: springmvc + mybatis + react项目
 然后，maven执行mvn clean tomcat:run命令；或下载eclipse for javaee，打开pom.xml，右键执行mvn clean tomcat:run命令；
 最后：浏览器访问即可
 
-demo-8: 通过react学习ES2016语法
-使用 create-react-app 去自动构建你的app程序
+demo-8: 学习ES2016语法
+(1) Lynda – React ES6, ES2016, and Flow ：使用 create-react-app 去自动构建你的app程序（完）
+(2) Getting Started with ES2017/ES8 ：（未）
+
+demo-9:  Learn React The World's Most Lucrative JavaScript Library
