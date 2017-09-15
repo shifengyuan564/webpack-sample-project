@@ -7,3 +7,5 @@ const App = () => (
 );
 
 export default App;
+
+export const appDescription = "app says hi";

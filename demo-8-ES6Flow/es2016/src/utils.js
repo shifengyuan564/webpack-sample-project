@@ -60,8 +60,8 @@ export const rando = new ColorGenerator();
 
 const shakespeareApi = "https://api.graph.cool/simple/v1/shakespeare";
 
-let options = () => {
-    return {
+let options = () => (
+    {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -80,7 +80,7 @@ let options = () => {
               }`
         })
     }
-};
+);
 
 /* ================  利用Fetch代替$.ajax ===========================*/
 /* 1. 使用 Fetch
@@ -97,7 +97,7 @@ let options = () => {
 fetch(shakespeareApi, options())
     .then(response => response.json())
     .then(json => console.log(json))
-    .catch((e) => console.log("Oops, error",e));
+    .catch((e) => console.log("Oops, error", e));
 
 /* 3. 使用 ES7 的async/await 来做优化 */
 export async function getRandomPoem() {
