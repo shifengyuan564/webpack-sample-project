@@ -106,7 +106,7 @@ public class TimeAgo {
 
 
 
-    /*public static void main(String args[]) {
+    public static void main(String args[]) {
         System.out.println(toDuration(123));
         System.out.println(toDuration(1230));
         System.out.println(toDuration(12300));
@@ -117,6 +117,6 @@ public class TimeAgo {
         System.out.println(toDuration(1230000000));
         System.out.println(toDuration(12300000000L));
         System.out.println(toDuration(123000000000L));
-    }*/
+    }
 }
 

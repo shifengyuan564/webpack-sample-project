@@ -1,9 +1,7 @@
-var webpack = require('webpack');
 
 module.exports = {
     entry: [
-        'webpack-dev-server/client?http://0.0.0.0:8080',
-        'webpack/hot/only-dev-server',
+        "babel-polyfill",
         './src/index.js',
     ],
     output: {
@@ -11,10 +9,6 @@ module.exports = {
         publicPath: '/',
         filename: 'bundle.js',
     },
-    plugins: [
-        new webpack.HotModuleReplacementPlugin(),
-    ],
-
     externals: {
         cheerio: 'window',
         'react/addons': true,
@@ -22,18 +16,33 @@ module.exports = {
         'react/lib/ReactContext': true,
     },
     module: {
-        loaders: [
-            {
-                test: /\.js$/,
-                loaders: ['react-hot', 'babel'], exclude: /node_modules/,
-            },
-            {
-                test: /\.css$/,
-                loaders: [
-                    'style?sourceMap',
-                    'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
-                ],
-            },
-        ],
+        rules: [{
+            test: /\.(js|jsx)$/,
+            loader: "babel-loader",
+            exclude: /node_modules/,
+            options: {
+                "presets": ["react", "es2015", "stage-1"]
+            }
+        }, {
+            test: /\.css$/,     // 以css结尾的文件
+            use: [
+                {loader: "style-loader"},
+                {loader: "css-loader", options: {sourceMap: true}},
+                {loader: "postcss-loader"}
+            ]
+        }, {
+            test: /\.(scss|sass)$/,
+            use: [
+                {loader: "style-loader"},
+                {loader: "css-loader", options: {sourceMap: true}},
+                {loader: "sass-loader", options: {sourceMap: true}}
+            ]
+        }]
     },
+    devServer: {
+        inline: true, /*浏览器自动更新*/
+        contentBase: __dirname,
+        port: 8080
+    },
+    devtool: 'source-map'         //配置生成Source Maps，选择合适的选项
 };

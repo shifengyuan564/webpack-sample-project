@@ -72,8 +72,7 @@ module.exports = {
     devServer: {
         contentBase: __dirname,     // 如果设置成 __dirname + "/public"	:直接让localhost:7000指向/public中的index.html
         port: 7000
-    }
-    ,
+    },
     devtool: 'source-map'         //配置生成Source Maps，选择合适的选项
 };
 
