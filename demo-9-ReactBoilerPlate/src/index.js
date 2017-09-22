@@ -8,6 +8,5 @@ const randomObject = {Vaibhav:'10', Alex:'12'};
 const {Vaibhav} = randomObject;
 
 
-/*<App/> is a instance of App*/
-console.log(appDescription);
+/*<App/> is an instance of App*/
 ReactDOM.render(<App/>, document.querySelector('.container'));
