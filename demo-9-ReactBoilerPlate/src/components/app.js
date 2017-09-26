@@ -10,15 +10,45 @@ const App = () => (
 );
 */
 
-class App extends Component {
+export default class App extends Component {
 
-    render(){
-        return(
+    constructor(props) {
+        super(props);
+        this.state = {
+            counter: 0,
+            text:'',
+            value: ''
+        };
+        this.counterPlus = this.counterPlus.bind(this);
+        this.textEntered = this.textEntered.bind(this);
+
+    }
+
+    counterPlus() {
+        this.setState({counter: ++this.state.counter});
+    }
+
+    textEntered(e) {
+        this.setState({value: e.target.value});
+    }
+
+    changeText(){
+        this.setState({text:this.state.value});
+    }
+
+    /* 这种箭头写法不用bind
+    textEntered = (e) => {
+        this.setState({value: e.target.value});
+    };*/
+
+    render() {
+        return (
             <div>
-                Hi
+                {this.state.text}
+                <input type="text" value={this.state.value} onChange={this.textEntered}/>
+                <Button btName={'Click Me'} clicked={this.changeText}/>
             </div>
         );
     }
 }
 
-export default App;
