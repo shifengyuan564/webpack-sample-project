@@ -1,7 +1,6 @@
 import React, {PropTypes} from 'react';
 
 const Button = (props) => {
-
     return (
         <button onClick={props.clicked}>{props.btName}</button>
     )

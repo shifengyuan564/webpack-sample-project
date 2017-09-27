@@ -1,3 +1,7 @@
+/*
+    02 Introduction To React
+*/
+
 import React, {Component} from 'react';
 import Button from './button';
 
@@ -16,27 +20,33 @@ class App extends Component {
         super(props);
         this.state = {
             counter: 0,
-
+            value: '',
+            text:''
         };
 
         this.counterPlus = this.counterPlus.bind(this);
         this.textEntered = this.textEntered.bind(this);
+        this.changeText = this.changeText.bind(this);
     }
 
     counterPlus() {
         this.setState({counter: ++this.state.counter});
     }
 
-    textEntered(e){
+    textEntered(e) {
+        this.setState({value: e.target.value});
+    }
 
+    changeText(){
+        this.setState({text: this.state.value});
     }
 
     render() {
         return (
             <div>
-                {this.state.counter}
-                <Button btName={'Add 1'} clicked={this.counterPlus}/>
-                <input type="text" value="Search a Song" onChange={this.textEntered} />
+                {this.state.text}
+                <input type="text" value={this.state.value} onChange={this.textEntered}/>
+                <Button btName={'Click Me'} clicked={this.changeText}/>
             </div>
 
         );
