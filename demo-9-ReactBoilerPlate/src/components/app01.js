@@ -1,3 +1,7 @@
+/*
+    02 Introduction To React
+*/
+
 import React, {Component} from 'react';
 import Button from './button';
 
@@ -10,18 +14,19 @@ const App = () => (
 );
 */
 
-export default class App extends Component {
+class App extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
             counter: 0,
-            text:'',
-            value: ''
+            value: '',
+            text:''
         };
+
         this.counterPlus = this.counterPlus.bind(this);
         this.textEntered = this.textEntered.bind(this);
-
+        this.changeText = this.changeText.bind(this);
     }
 
     counterPlus() {
@@ -33,13 +38,8 @@ export default class App extends Component {
     }
 
     changeText(){
-        this.setState({text:this.state.value});
+        this.setState({text: this.state.value});
     }
-
-    /* 这种箭头写法不用bind
-    textEntered = (e) => {
-        this.setState({value: e.target.value});
-    };*/
 
     render() {
         return (
@@ -48,7 +48,9 @@ export default class App extends Component {
                 <input type="text" value={this.state.value} onChange={this.textEntered}/>
                 <Button btName={'Click Me'} clicked={this.changeText}/>
             </div>
+
         );
-    }
+    };
 }
 
+export default App;
