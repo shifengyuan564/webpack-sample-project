@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import SearchBar from './SearchBar/SearchBar';
 import searchSpotify from '../utils/searchSpotify';
-
+import SongItem from './SongItem/SongItem';
 
 export default class App extends Component {
 
@@ -9,20 +9,23 @@ export default class App extends Component {
         super(props);
         this.state = {
             initialMessage: 'greeting',
-            song:''
+            song: '',
+            tracks: []
         };
     }
 
     fetchSongs = () => {
-        searchSpotify(this.state.song).then((tracks)=>console.log('tracks', tracks));
+        searchSpotify(this.state.song)
+            .then(({aRows}) => this.setState({tracks: aRows}));
     };
 
     render() {
-        const {initialMessage, song} = this.state;
+        const {initialMessage, song, tracks} = this.state;
+        console.log(tracks);
         return (
             <div>
                 <SearchBar updateText={(song) => this.setState({song})} fetchSongs={this.fetchSongs}/>
-                {initialMessage}
+                {tracks.length > 0 && <SongItem songData={tracks[0]}/>} {/* && operator is a safe guard to right part */}
             </div>
         );
     }

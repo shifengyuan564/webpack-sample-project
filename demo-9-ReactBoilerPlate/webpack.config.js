@@ -39,10 +39,16 @@ module.exports = {
             ]
         }]
     },
+    node: {
+        net: 'empty',
+        fs: "empty",
+        tls: 'empty'
+    },
     devServer: {
         inline: true, /*浏览器自动更新*/
         contentBase: __dirname,
-        port: 3000
+        port: 3000,
+        historyApiFallback: true,
     },
     devtool: 'source-map'         //配置生成Source Maps，选择合适的选项
 };

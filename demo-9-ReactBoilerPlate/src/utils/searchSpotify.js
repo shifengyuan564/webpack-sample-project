@@ -1,26 +1,21 @@
 import axios from 'axios';
 
+
 const searchSpotify = (searchItem) => new Promise((resolve, reject) => {
 
-    const url = `https://api.spotify.com/v1/search?q=${searchItem}&type=track`;
-
-    const myClientInfo = {
-        clientID: '439fe1d2fe8941829908a84e45e60522',
-        clientSecret: '9ee52ed659e14e64a2d38ae54454ea9e'
-    };
-
-    const result = axios({
-        method: 'post',
-        url: 'https://accounts.spotify.com/api/token',
-        data: {
-            grant_type: 'client_credentials'
-        },
-        header: {
-            'Authorization': 'Basic ' + btoa(`${myClientInfo.clientID}:${myClientInfo.clientSecret}`),
-        },
-    });
-
-    result.then(({data}) => resolve(data))
+    // 获取专辑 https://freemusicarchive.org/api/get/albums.xml?api_key=WS35J1MULKPQQOEI&limit=10
+    /*
+    {
+        "page_title": "Free Music Archive",
+        "page_cache_key": "anonuser_pagecache_/api/trackSearch?q=snow&limit=100",
+        "aRows": [
+            "[Borful Tang] Smyrna Snow Walk (416)",
+            "[Bonne Aparte] Taste My Snow (3401)"
+        ]
+    }
+    */
+    axios.get(`https://freemusicarchive.org/api/trackSearch?q=${searchItem}&limit=10`)
+        .then(({data}) => resolve(data))
         .catch((err) => reject(err));
 });
 
