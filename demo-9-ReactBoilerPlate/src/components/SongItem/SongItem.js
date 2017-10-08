@@ -15,18 +15,18 @@ const SongItem = (props) => {
 
     /* 截取] (之间的字符串*/
     let musicName = songData.match(/][^(]+\(/g)[0];
-    musicName = musicName.substring(1, musicName.length-1).trim();
+    musicName = musicName.substring(1, musicName.length - 1).trim();
 
     return (
         <div className={styles.root}>
             <div className={styles.album}>
-                <img role="presentation" src="../../../img/cover.jpg" />
+                <img className={styles.image} role="presentation" src="../../../img/cover.jpg"/>
                 <span className={styles.albumName}>The Love Songs</span>
             </div>
             <div className={styles.songAndDescription}>
-                <audio controls  src="../../../music/miraie.aac"/>
+                <audio controls src="../../../music/miraie.aac"/>
                 <span className={styles.songDescription}>Name: {musicName}</span>
-                <span className={styles.songDescription}>Duration(ms): 155600</span>
+                <span className={styles.songDescription}>Artist: {artist}</span>
             </div>
         </div>
     );

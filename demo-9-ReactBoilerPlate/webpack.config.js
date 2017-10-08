@@ -1,4 +1,3 @@
-
 module.exports = {
     entry: [
         "babel-polyfill",
@@ -27,7 +26,14 @@ module.exports = {
             test: /\.css$/,     // 以css结尾的文件
             use: [
                 {loader: "style-loader"},
-                {loader: "css-loader", options: {sourceMap: true}},
+                {
+                    loader: "css-loader",
+                    options: {
+                        sourceMap: true,
+                        modules: true,
+                        localIdentName: '[name]_[local]_[hash:base64:5]'
+                    }
+                }, // 支持模块化导入
                 {loader: "postcss-loader"}
             ]
         }, {
