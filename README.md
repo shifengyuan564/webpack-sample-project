@@ -35,3 +35,10 @@ demo-8: 学习ES2016语法
 (2) Getting Started with ES2017/ES8 ：（未）
 
 demo-9:  Learn React The World's Most Lucrative JavaScript Library - 03 Axios Component Nesting and Building Spotify App
+
+demo-10: Learn React The World's Most Lucrative JavaScript Library - 04 Redux React and our Shopping Cart App
+(1) npm install -g create-react-app
+(2) create-react-app react_shopping_cart
+(3) cd react_shopping_cart
+(4) npm start
+(5) 访问localhost:3000
