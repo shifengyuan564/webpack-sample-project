@@ -42,3 +42,4 @@ demo-10: Learn React The World's Most Lucrative JavaScript Library - 04 Redux Re
 (3) cd react_shopping_cart
 (4) npm start
 (5) 访问localhost:3000
+(6) npm install --save redux react-redux
