@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {addToCart} from '../../actions';
 import './item.css';
 
-export default class Items extends Component {
+class Items extends Component {
 
     renderList = () => {
-        const listOfData = [];
-        return listOfData.map((item) => (
-            <li key={item.id} className="Items-list-item" onClick={() => console.log('added to store')}>
+        const {items, fillCartAction} = this.props;
+
+        return items.map((item) => (
+            <li key={item.id} className="Items-list-item" onClick={() => fillCartAction(item)}>
                 <img role="presentation" src={item.link}/>
                 <span>{item.title}</span>
             </li>
@@ -20,5 +23,14 @@ export default class Items extends Component {
             </ul>
         )
     }
-
 }
+
+const mapStateToProps = (reduxState) => ({
+    items: reduxState.itemsRD
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    fillCartAction: (item) => dispatch(addToCart(item))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Items);
