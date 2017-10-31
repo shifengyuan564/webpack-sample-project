@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import Items from "../containers/items";
+import ShoppingCart from "../containers/shoppingCart";
 
 export default class App extends Component{
 
@@ -8,6 +9,7 @@ export default class App extends Component{
         return (
             <div className="App-mainbody">
                 <Items/>
+                <ShoppingCart/>
             </div>
         )
     }

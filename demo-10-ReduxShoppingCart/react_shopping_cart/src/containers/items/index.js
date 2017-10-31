@@ -10,7 +10,7 @@ class Items extends Component {
 
         return items.map((item) => (
             <li key={item.id} className="Items-list-item" onClick={() => fillCartAction(item)}>
-                <img role="presentation" src={item.link}/>
+                <img role="presentation" src={item.link} className="Items-image"/>
                 <span>{item.title}</span>
             </li>
         ));
